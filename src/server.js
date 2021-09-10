@@ -7,7 +7,7 @@ const app = express();
 const __dirname = path.resolve();
 
 
-app.use(express.static(path.join(__dirname,'/build')));
+app.use(express.static(path.join(__dirname,'/src/build')));
 app.use(bodyParser.json());
 
 const withDB = async (operations, res) => {
@@ -67,7 +67,7 @@ app.post('/api/articles/:name/add-comment', (req, res) => {
 
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/build/index.html'));
+    res.sendFile(path.join(__dirname + '/src/build/index.html'));
 })
 
 
